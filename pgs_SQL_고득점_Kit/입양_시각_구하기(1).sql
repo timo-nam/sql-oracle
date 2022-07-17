@@ -1,0 +1,9 @@
+SELECT
+    TO_NUMBER(TO_CHAR(datetime, 'HH24')) HOUR,
+    COUNT(*) COUNT
+  FROM animal_outs
+  GROUP BY TO_CHAR(datetime, 'HH24')
+  HAVING TO_CHAR(datetime, 'HH24') BETWEEN 9 AND 19
+--HAVING TO_CHAR(datetime, 'HH24') BETWEEN '09' AND '19'
+--HAVING TO_NUMBER(TO_CHAR(datetime, 'HH24')) BETWEEN 9 AND 19
+  ORDER BY HOUR;
